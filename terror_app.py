@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
+
 #Import data
 df = pd.read_csv('https://media.githubusercontent.com/media/adrian-florin/datasets/main/terrorism_data.csv', encoding="ISO-8859-1", low_memory=False)
 df['nperps'] = abs(df['nperps'])
@@ -222,10 +223,13 @@ navbar = dbc.NavbarSimple(
             label="More",
         ),
     ],
-    brand="Global Terrorism Visualization",
+    brand="Exploring Global Terrorism",
     brand_href="#",
     color="dark",
     dark=True,
+    style={
+        "margin-bottom": "5em",
+    }
 )
 
 region_options = []
@@ -241,53 +245,75 @@ app.layout = html.Div(children=[
     dbc.Container([
         dbc.Row(children=[
             dbc.Col(children=[
+                dcc.Slider(id="birth-year-slider",
+                    min=years_attack.min(),
+                    max=years_attack.max(),
+                    marks=years_options,
+                    step=1,
+                ),
                 dcc.Graph(id="scatter-map", figure=fig_map)
                 ]),
-            ]),
-        dbc.Row(children=[
-             dcc.Slider(id="birth-year-slider",
-                            min=years_attack.min(),
-                            max=years_attack.max(),
-                            marks=years_options,
-                            step=1,
-                    )
-        ]),
+            ], style={
+                "padding": 10,
+                }),
         # droprows
         dbc.Row([
             dbc.Col([
+                html.Label("Count by",
+                    style={
+                        "font-weight": "bold"
+                    }
+                ),
                 dcc.Dropdown(id="value-one", options=value_one_option, value=None)
             ]),
             dbc.Col([
+                html.Label("Count by",
+                    style={
+                        "font-weight": "bold"
+                    }
+                ),
                 dcc.Dropdown(id="value-two", options=value_two_option, value=None)
             ]),
             dbc.Col([
+                html.Label("Group by",
+                    style={
+                        "font-weight": "bold"
+                    }
+                ),
                 dcc.Dropdown(id="grouping-filter", options=grp_option, value=None)
             ]),
             dbc.Col([
+                html.Label("Region",
+                    style={
+                        "font-weight": "bold"
+                    }
+                ),
                 dcc.Dropdown(id="region-dropdown", options=region_options, value=None)
             ])
         ]),
         # small scatter map, bar chart, and pie chart
         dbc.Row(children=[
-             dbc.Col(children=[
-                dcc.Graph(id="scatter-map-small", figure=fig_map_small)
-            ], width=4),
             dbc.Col(children=[
-                html.h6(id='bar-chart-title'),
+                dcc.Graph(id="scatter-map-small", figure=fig_map_small),
+            ]),
+            dbc.Col(children=[
                 dcc.Graph(id="bar-chart", figure=fig_bar)
-            ], width=4),
-            dbc.Col(children=[
-                dcc.Graph(id="pie-chart", figure=fig_pie)
-            ], width=4),
+            ]),
         ]),
         # line chart and stacked bar chart
         dbc.Row(children=[
             dbc.Col(children=[
-                dcc.Graph(id="line-chart", figure=fig_line)
-            ], width=4),
+                dcc.Graph(id="pie-chart", figure=fig_pie),
+            ],),
+            
             dbc.Col(children=[
-                dcc.Graph(id="stacked-chart", figure=fig_stacked)
-            ], width=4),
+                dcc.Graph(id="line-chart", figure=fig_line),
+            ]),
+            
+            dbc.Col(children=[
+                dcc.Graph(id="stacked-chart", figure=fig_stacked),
+            ])
+            
         ])
     ])
 ])    
@@ -360,7 +386,7 @@ def display_small_map(selected_region):
                         hover_name="city",
                         color=grp,
                         zoom=2)
-    fig_map_small.update_layout(height=350, width=450, margin={"r":0,"t":0,"l":0,"b":0}, showlegend=False)
+    fig_map_small.update_layout(title="Regional Map", height=350, width=450, margin={"r":0,"t":0,"l":0,"b":0}, showlegend=False)
 
     return fig_map_small
 
