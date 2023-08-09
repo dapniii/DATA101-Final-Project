@@ -44,7 +44,7 @@ def layout():
                                 'object-fit': 'contain'
                             }
                         ),
-                        html.H5('Provide Awareness'),
+                        html.Strong('Provide Awareness'),
                     ], style={
                         'display': 'flex',
                         'flex-direction': 'column',
@@ -62,7 +62,7 @@ def layout():
                                 'object-fit': 'contain'
                             }
                         ),
-                        html.H5('Analyze Trends and Patterns'),
+                        html.Strong('Analyze Trends and Patterns'),
                     ], style={
                         'display': 'flex',
                         'flex-direction': 'column',
@@ -80,7 +80,7 @@ def layout():
                                 'object-fit': 'contain'
                             }
                         ),
-                        html.H5('Lack of Collated Summary'),
+                        html.Strong('Lack of Collated Summary'),
                     ], style={
                         'display': 'flex',
                         'flex-direction': 'column',
@@ -98,7 +98,7 @@ def layout():
                                 'object-fit': 'contain'
                             }
                         ),
-                        html.H5('Limited Availability of Dashboards'),
+                        html.Strong('Limited Availability of Dashboards'),
                     ], style={
                         'display': 'flex',
                         'flex-direction': 'column',
@@ -116,7 +116,7 @@ def layout():
                                 'object-fit': 'contain'
                             }
                         ),
-                        html.H5('Ongoing Presence of Terrorism'),
+                        html.Strong('Ongoing Presence of Terrorism'),
                     ], style={
                         'display': 'flex',
                         'flex-direction': 'column',
@@ -145,7 +145,7 @@ def layout():
                             'object-fit': 'contain'
                         }
                     ),
-                    html.H5('Government'),
+                    html.Strong('Government'),
                 ], style={
                     'display': 'flex',
                     'flex-direction': 'column',
@@ -163,7 +163,7 @@ def layout():
                             'object-fit': 'contain'
                         }
                     ),
-                    html.H5('International Non-Profit Organizations'),
+                    html.Strong('International Non-Profit Organizations'),
                 ], style={
                     'display': 'flex',
                     'flex-direction': 'column',
@@ -181,7 +181,7 @@ def layout():
                             'object-fit': 'contain'
                         }
                     ),
-                    html.H5('Media'),
+                    html.Strong('Media'),
                 ], style={
                     'display': 'flex',
                     'flex-direction': 'column',
@@ -199,7 +199,7 @@ def layout():
                             'object-fit': 'contain'
                         }
                     ),
-                    html.H5('General Public'),
+                    html.Strong('General Public'),
                 ], style={
                     'display': 'flex',
                     'flex-direction': 'column',
