@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
+# Register as home page
 dash.register_page(__name__, path='/')
 
 #Import data
