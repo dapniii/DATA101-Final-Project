@@ -9,17 +9,23 @@
 
 1. Create a conda environment
 
-`conda create --name data101`
+```
+conda create --name data101
+```
 
 2. Activate conda environment
 
-`conda activate data101`
+```
+conda activate data101
+```
 
 3. Install the necessary packages *(see package versions below)*  
 
-`conda install pandas plotly dash`
+```
+conda install pandas plotly dash
 
-`conda install -c conda-forge dash-bootstrap-components`
+conda install -c conda-forge dash-bootstrap-components
+```
 
 > Older versions of plotly may cause errors. Make sure to install the recommended versions below
 
@@ -27,7 +33,9 @@
 
 5. Run the app using this command:
 
-`python final_app.py`
+```
+python final_app.py
+```
 
 #### Package Versions ####
 * pandas (2.0.3)
