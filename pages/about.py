@@ -1,28 +1,12 @@
-from dash import Dash, html, dcc, Input, Output, callback
+import dash
+from dash import html
 import dash_bootstrap_components as dbc
 
-
-navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("About", href="#")),
-        dbc.NavItem(dbc.NavLink("Home", href="/terror_app")),
-    ],
-    brand="Global Terrorism",
-    brand_href="#",
-    color="dark",
-    dark=True,
-    style={
-        'margin-bottom': '1em'
-    }
-)
-
-# Initialize Dash application
-app = Dash(__name__, 
-           external_stylesheets=[dbc.themes.BOOTSTRAP])
+dash.register_page(__name__)
 
 # App layout
-app.layout = html.Div(children=[
-    navbar,
+def layout(): 
+    return html.Div(children=[
     dbc.Container([
         # Description
         dbc.Card([
@@ -235,9 +219,4 @@ app.layout = html.Div(children=[
     }),
 ])
 
-    
-
-# Run the app
-if __name__ == '__main__':
-    app.run_server(debug=True)
 
