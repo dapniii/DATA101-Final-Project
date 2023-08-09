@@ -1,7 +1,7 @@
 # DATA101 Final Project (Group 1)
 ### Mapping Global Terrorism: Examining Hotspots and Patterns
 
-**Submitted by:** Angelo Endozo, Adrian Florin, Azee Latiph, Daphne Ong
+**Created by:** Angelo Endozo, Adrian Florin, Azee Latiph, Daphne Ong
 
 #### How to Run ####
 1. Open terminal. Install the necessary packages *(see package versions below)*  
