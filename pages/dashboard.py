@@ -303,7 +303,7 @@ def layout():
         # big map
         dbc.Row(children=[
             dbc.Col(children=[
-                dcc.Graph(id="scatter-map", figure=fig_map)
+                dcc.Loading([dcc.Graph(id="scatter-map", figure=fig_map)]),
                 ]),
             ], style={'padding' : '20px'}),
         html.Hr(),
@@ -348,10 +348,10 @@ def layout():
         # small scatter map, bar chart
         dbc.Row(children=[
              dbc.Col(children=[
-                dcc.Graph(id="scatter-map-small", figure=fig_map_small)
+                dcc.Loading([dcc.Graph(id="scatter-map-small", figure=fig_map_small)]),
             ], width=4, className="mt-3"),
             dbc.Col(children=[
-                dcc.Graph(id="bar-chart", figure=fig_bar)
+                dcc.Loading([dcc.Graph(id="bar-chart", figure=fig_bar)]),
             ], width=8, className="mt-3"),
         ]),
         html.Hr(),
@@ -368,13 +368,13 @@ def layout():
         # line chart and stacked bar chart, and pie chart
         dbc.Row(children=[
             dbc.Col(children=[
-                dcc.Graph(id="pie-chart", figure=fig_pie)
+                dcc.Loading([dcc.Graph(id="pie-chart", figure=fig_pie)]), 
             ], width=4, className="mt-3"),
             dbc.Col(children=[
-                dcc.Graph(id="line-chart", figure=fig_line)
+                dcc.Loading([dcc.Graph(id="line-chart", figure=fig_line)]),
             ], width=4, className="mt-3"),
             dbc.Col(children=[
-                dcc.Graph(id="stacked-chart", figure=fig_stacked)
+                dcc.Loading([dcc.Graph(id="stacked-chart", figure=fig_stacked)]),
             ], width=4, className="mt-3"),
         ])
     ])
