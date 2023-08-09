@@ -686,7 +686,7 @@ def update_pie_chart(value_one_select, selected_group, selected_region):
         font=dict(
                 size=8,
         ), 
-        title = dict(text = f"Percentage of {value_one} by {grp}", 
+        title = dict(text = f"Percentage of {value_one_select} by {selected_group}", 
                      automargin=True, 
                      font=dict(size=title_font_size), 
                      yanchor="top",
